@@ -2,10 +2,10 @@ import java.util.Scanner;
 
 public class Nim {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
         
         System.out.print("Masukkan NIM: ");
-        String nim = scanner.nextLine();
+        String nim = sc.nextLine();
         System.out.println("===============================");
         int n = Integer.parseInt(nim.substring(nim.length() - 2));
         if (n < 10) {
@@ -23,6 +23,6 @@ public class Nim {
             }
         }
         
-        scanner.close();
+        sc.close();
     }
 }

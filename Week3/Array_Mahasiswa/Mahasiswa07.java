@@ -9,11 +9,13 @@ public class Mahasiswa07 {
     double ipk;
 
     public Mahasiswa07(String nm, String jk, String ni, double ip) {
-        nama = nm;
-        jenisKelamin = jk;
-        nim = ni;
-        ipk = ip;
+        this.nama = nm;
+        this.jenisKelamin = jk;
+        this.nim = ni;
+        this.ipk = ip;
     }
+
+    
 
     public static void main(String[] args) {
         Scanner sc7 = new Scanner(System.in);
@@ -41,6 +43,36 @@ public class Mahasiswa07 {
             System.out.println("Nilai IPK : " + mh[i].ipk);
             System.out.println();
         }
+
+        double averageGPA = calculateAverageGPA(mh);
+        System.out.println("Rata-rata IPK: " + averageGPA);
+        displayHighestGPAStudent(mh);
         sc7.close();
     }
+
+
+        private static double calculateAverageGPA(Mahasiswa07[] mh) {
+            double totalGPA = 0;
+            for (Mahasiswa07 mahasiswa : mh) {
+                totalGPA += mahasiswa.ipk;
+            }
+            return totalGPA / mh.length;
+        }
+
+        private static void displayHighestGPAStudent(Mahasiswa07[] mh) {
+            Mahasiswa07 highestGPAStudent = mh[0];
+            for (int i = 1; i < mh.length; i++) {
+                if (mh[i].ipk > highestGPAStudent.ipk) {
+                    highestGPAStudent = mh[i];
+                }
+            }
+        
+        System.out.println("Mahasiswa dengan IPK tertinggi:");
+            System.out.println("Nama: " + highestGPAStudent.nama);
+            System.out.println("NIM: " + highestGPAStudent.nim);
+            System.out.println("Jenis Kelamin: " + highestGPAStudent.jenisKelamin);
+            System.out.println("IPK: " + highestGPAStudent.ipk);
+        
+}
+
 }

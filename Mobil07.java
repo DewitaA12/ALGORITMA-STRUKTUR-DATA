@@ -1,10 +1,10 @@
-import java.util.ArrayList;
+import java.util.Scanner;
 
 class Mobil07{
     String nama;
-    public int c2;
-    public int hargaBeli;
-    public int thnProduksi;
+    int c2;
+    int hargaBeli;
+    int thnProduksi;
 
 public Mobil07(String nm, int cc, int hb, int tp){
         this.nama = nm;
@@ -48,42 +48,59 @@ public Mobil07(String nm, int cc, int hb, int tp){
     public String printData(){
          return "Merk: " + nama + ", Harga Beli: " + hargaBeli + ", CC: " + c2 + ", Tahun Produksi: " + thnProduksi;
     }
-}
-public class Mobil07Main {
-    public static void main(String[] args) {
-        ArrayList<Mobil07> mobilList = new ArrayList<>();
-        mobilList.add(new Mobil07("MCLAREN", 2000, 30000, 2024));
-        mobilList.add(new Mobil07("TOYOTA", 1500, 8000, 2014));
-        mobilList.add(new Mobil07("CHERRY", 1200, 5000, 2004));
 
-        double totalBiayaPerawatan = 0;
-        int mobilThnLebih2010 = 0;
-        for (Mobil07 mobil : mobilList) {
-            if (mobil.thnProduksi() > 2010) {
-                totalBiayaPerawatan += mobil.hitungBiayaPerawatan();
-                mobilThnLebih2010++;
-            }
+public static void main(String[] args) {
+    Scanner sc7 = new Scanner(System.in);
+    Mobil07 mb[] = new Mobil07[3];
+
+     for (int i = 0; i < mb.length; i++) {
+            System.out.print("Merk mobil ke-" + (i + 1) + " = ");
+            String nama = sc7.nextLine();
+            System.out.print("Harga Beli  = ");
+            int hargaBeli = sc7.nextInt();
+            System.out.print("CC  = ");
+            int c2 = sc7.nextInt();
+            System.out.print("Tahun Produksi = ");
+            int thnProduksi = sc7.nextInt();
+            sc7.nextLine(); 
+            System.out.println();
+            mb[i] = new Mobil07(nama, hargaBeli, c2, thnProduksi);
         }
 
-        double rataBiayaPerawatan = totalBiayaPerawatan / mobilThnLebih2010;
-        System.out.println("Rata-rata biaya perawatan mobil tahun produksi > 2010: " + rataBiayaPerawatan);
-
-        double maxBiayaTotal = 0;
-        Mobil07 mobilTermahal = null;
-        for (Mobil07 mobil : mobilList) {
-            if (mobil.cc() > 1500 && mobil.thnProduksi() < 2010) {
-                double biayaTotal = mobil.hitungBiayaTotal();
-                if (biayaTotal > maxBiayaTotal) {
-                    maxBiayaTotal = biayaTotal;
-                    mobilTermahal = mobil;
-                }
-            }
+    for (int i = 0; i < mb.length; i++) {
+            System.out.println("Data Mobil ke-" + (i + 1));
+            System.out.println("Merk : " + mb[i].nama);
+            System.out.println("Harga Beli : " + mb[i].hargaBeli);
+            System.out.println("CC : " + mb[i].c2);
+            System.out.println("Tahun Produksi : " + mb[i].thnProduksi);
+            System.out.println();
         }
-        
-        if (mobilTermahal != null) {
-            System.out.printf("Mobil dengan biaya total termahal:%n%s%n dengan biaya total sebesar %.2f%n", mobilTermahal.printData(), maxBiayaTotal);
-        } else {
-            System.out.println("Tidak ada mobil yang memenuhi kriteria.");
+
+    double totalBiayaPerawatan = 0;
+    int mobilThnLebih2010 = 0;
+    for (int i = 0; i < mb.length; i++) {
+        if (mb[i].thnProduksi > 2010) {
+            totalBiayaPerawatan += mb[i].hitungBiayaPerawatan();
+            mobilThnLebih2010++;
         }
     }
+
+    double rataBiayaPerawatan = totalBiayaPerawatan / mobilThnLebih2010;
+    System.out.println("Rata-rata biaya perawatan mobil tahun produksi > 2010: " + rataBiayaPerawatan);
+
+    double maxBiaya = 0;
+    for (int i = 0; i < mb.length; i++) {
+        if (mb[i].cc() > 1500 && mb[i].thnProduksi() < 2010) {
+            double biayaTotal = mb[i].hitungBiayaTotal();
+            if (biayaTotal > maxBiaya) {
+                maxBiaya = biayaTotal;
+            }
+        }
+    }
+    System.out.println("Mobil termahal dengan cc>1500 && Produksi>2010 : " + maxBiaya);
+    sc7.close();
+    
 }
+}
+
+   

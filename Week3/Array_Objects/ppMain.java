@@ -1,13 +1,14 @@
 import java.util.Scanner;
 public class ppMain {
-public static void main(String[] args) {
+public static void main(String[] args) {//Main method
     Scanner sc = new Scanner(System.in);
-    PersegiPanjang[] ppArray = new PersegiPanjang[3];
+    PersegiPanjang[] ppArray = new PersegiPanjang[3]; //>>Persegipanjang merupakan tipe data object, digunakan untuk deklarasi array object
     
 
     for (int i = 0; i < 3; i++)
     {
-        ppArray[i] = new PersegiPanjang();
+        ppArray[i] = new PersegiPanjang(); 
+        //PersegiPanjang merupakan konstruktor default yang namanya sama dengan class digunakan untuk instansiasi/membuat objek
         System.out.println("Persegi panjang ke-" + i);
         System.out.print("Masukkan panjang: ");
         ppArray[i].panjang = sc.nextInt();

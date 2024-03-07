@@ -3,23 +3,30 @@ package Array_LuasPermukaanNVolume;
 public class LimasSegi4 {
     public int sisiS4;
     public int tinggi;
-    public int sisiM;
-
-public  LimasSegi4 (int sS4, int t, int sM)
+   
+public  LimasSegi4 (int sS4, int t)
 {
     sisiS4 = sS4;
     tinggi = t;
-    sisiM  = sM;
 }
 
-public double hitungLuasPermukaanLimasSegi4()
+double hitungLuasPermukaanLimasSegi4()
 {
- return (sisiS4*sisiS4)+(4*((0.5)*sisiS4*sisiM))*10;
+    double lp = 0;
+    double luasAlas = sisiS4*sisiS4;
+    double sisiMiring = Math.sqrt(Math.pow(tinggi,2)+
+                        Math.pow(0.5*sisiS4,2));
+    double luasSelimut = 4*(0.5*0.5*sisiS4*sisiMiring);
+    lp = luasAlas+luasSelimut;
+    return lp;
 }
 
-public double hitungVolumeLimasSegi4()
+double hitungVolumeLimasSegi4()
 {
- return (0.33)*(sisiS4*sisiS4)*tinggi;
+    double vol = 0;
+    double luasAlas = sisiS4*sisiS4;
+    vol = 1.0/3.0*luasAlas*tinggi;
+    return vol;
 }
 
 }

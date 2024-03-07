@@ -11,11 +11,17 @@ public  Bola (int r)
 
 public double hitungLuasPermukaanBola()
 {
- return 4*phi*jari2*jari2;
+ double lp = 0;
+ double luasAlas = phi*jari2*jari2;
+ lp = 4*luasAlas;
+ return lp;
 }
 
-public double hitungVolumeKerucut()
+public double hitungVolumeBola()
 {
- return (4.0/3.0)*phi*jari2*jari2*jari2;
+ double vol = 0;
+ double luasAlas = phi*jari2*jari2;
+ vol = (4.0/3.0)*luasAlas*jari2;
+ return vol;
 }
 }

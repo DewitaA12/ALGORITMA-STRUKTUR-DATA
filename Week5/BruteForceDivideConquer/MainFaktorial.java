@@ -12,9 +12,9 @@ public class MainFaktorial {
 
     Faktorial[] fk = new Faktorial[10];
     for(int i=0; i<iJml; i++){
-        fk[i] = new Faktorial();
         System.out.println("Masukkan nilai data ke-" +(i+1)+":");
         fk[i].nilai = sc7.nextInt();
+        fk[i] = new Faktorial(i, i);
     }
 
     System.out.println("HASIL - BRUTE FORCE");

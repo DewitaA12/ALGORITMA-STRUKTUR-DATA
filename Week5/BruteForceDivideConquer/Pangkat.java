@@ -3,6 +3,11 @@ package Week5.BruteForceDivideConquer;
 public class Pangkat {
     public int nilai, pangkat;
 
+    public Pangkat(int n, int p){
+        nilai = n;
+        pangkat = p;
+    }
+
     int pangkatBF(int a, int n){
         int pangkat = 1;
         for (int i=1; i<=n; i++){

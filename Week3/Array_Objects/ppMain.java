@@ -2,12 +2,16 @@ import java.util.Scanner;
 public class ppMain {
 public static void main(String[] args) {//Main method
     Scanner sc = new Scanner(System.in);
-    PersegiPanjang[][] ppArray = new PersegiPanjang[3][3]; 
+    //PersegiPanjang[][] ppArray = new PersegiPanjang[3][3]; 
     //>>Persegipanjang merupakan tipe data object, digunakan untuk deklarasi array object
     
+    //Modifikasi length array  menjadi inputan
+    System.out.println("Masukkan jumlah persegi panjang: ");
+    int jumPP = sc.nextInt();
 
-    for (int i = 0; i < 3; i++){
-        for (int j = 0; j < 3; j++){
+    PersegiPanjang[][] ppArray = new PersegiPanjang[jumPP][jumPP];
+    for (int i = 0; i < ppArray.length; i++){
+        for (int j = 0; j < ppArray.length; j++){
         ppArray[i][j] = new PersegiPanjang(); 
         /*PersegiPanjang merupakan konstruktor default yang namanya 
         sama dengan class digunakan untuk instansiasi/membuat objek*/
@@ -19,8 +23,8 @@ public static void main(String[] args) {//Main method
     }
 }
 
-    for (int i = 0; i < 3; i++){
-    for (int j = 0; j < 3; j++){
+    for (int i = 0; i < ppArray.length; i++){
+    for (int j = 0; j < ppArray.length; j++){
         System.out.println();
         System.out.println("Persegi Panjang ke-" + i + "," + j);
         System.out.println("Panjang: " + ppArray[i][j].panjang + ", lebar: " + ppArray[i][j].lebar);

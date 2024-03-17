@@ -10,7 +10,7 @@ public class MainPangkat {
 
         Pangkat[] png = new Pangkat[elemen];
         for(int i=0; i<elemen; i++){
-            png[i] = new Pangkat();
+            png[i] = new Pangkat(i, i);
             System.out.println("Masukkan nilai yang hendak dipangkatkan : ");
             png[i].nilai = sc7.nextInt();
             System.out.println("Masukkan nilai pemangkat : ");

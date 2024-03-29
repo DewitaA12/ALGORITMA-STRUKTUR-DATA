@@ -15,16 +15,32 @@ public class Main {
         list.tambah(m4);
         list.tambah(m5);
 
-        System.out.println("Data Mahasiswa sebelum sorting = ");
+        System.out.println("DATA SEBELUM SORTING : ");
         list.tampil();
+        System.out.println();
 
+        System.out.println("BUBBLE SORT DESC");
         System.out.println("Data Mahasiswa setelah sorting desc berdasarkan ipk");
         list.bubbleSort();
         list.tampil();
+        System.out.println();
 
+        System.out.println("SELECTION SORT ASC");
         System.out.println("Data Mahasiswa setelah sorting asc berdasarkan ipk");
         list.selectionSort();
         list.tampil();
+        System.out.println();
+
+        System.out.println("INSERTION SORT ASC");
+        System.out.println("Data Mahasiswa setelah sorting asc berdasarkan ipk");
+        list.insertionSort();
+        list.tampil();
+        System.out.println();
+        
+
+        System.out.println("INSERTION SORT DESC");
+        System.out.println("Data Mahasiswa setelah sorting desc berdasarkan ipk");
+        list.insertionSortDesc();
+        list.tampil();
     }
-    
 }

@@ -34,7 +34,7 @@ public class PencarianBuku07 {
         if (pos!= -1) {
             System.out.println("data : " + x + " ditemukan pada indeks " + pos);
         } else {
-            System.out.println("data " + x + "tidak ditemukan");
+            System.out.println("data " + x + " tidak ditemukan");
         }
     }
 
@@ -48,5 +48,20 @@ public class PencarianBuku07 {
         } else {
             System.out.println("data " + x + "tidak ditemukan");
         }
+    }
+
+    public int FindBinarySearch (int cari, int left, int right) {
+        int mid;
+        if (right >= left) {
+            mid = (left + right) / 2;
+            if (cari == listBk[mid].kodeBuku) {
+                return (mid);
+            }else if (listBk[mid].kodeBuku > cari) {
+                return FindBinarySearch(cari, left, mid);
+            } else {
+                return FindBinarySearch (cari, mid, right);
+            }
+        }
+        return -1;
     }
 }

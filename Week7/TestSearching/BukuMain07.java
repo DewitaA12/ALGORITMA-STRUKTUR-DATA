@@ -55,6 +55,23 @@ public class BukuMain07 {
         posisi = data.FindBinarySearch(cari,0, jumBuku07 - 1);
         data.Tampilposisi(cari, posisi);
         data.TampilData(cari, posisi);
+
+        System.out.println("MENCARI JUDUL BUKU ");
+        System.out.println("Masukkan judul yang dicari : ");
+        String cariJudul = s1.nextLine();
+
+        System.out.println("Sequential Search");
+        data.sortJudul();
+        int posisiJudul = data.findSeqSearchJudul(cariJudul);
+        data.Tampilposisi(cariJudul, posisi);
+        data.tampilDataBuku(cariJudul);
+
+        System.out.println("Binary Search");
+        data.sortJudul();
+        posisiJudul = data.findBinSearchJudul(cariJudul);
+        data.Tampilposisi(cariJudul, posisi);
+        data.tampilDataBuku(cariJudul);
+
         s.close();
         s1.close(); 
 

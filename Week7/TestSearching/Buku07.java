@@ -8,11 +8,11 @@ public class Buku07 {
     int stock;
 
 public Buku07(int k, String j, int t, String p, int s) {
-    kodeBuku = k;
-    judulBuku = j;
-    tahunTerbit = t;
-    pengarang = p;
-    stock = s;
+    this.kodeBuku = k;
+    this.judulBuku = j;
+    this.tahunTerbit = t;
+    this.pengarang = p;
+    this.stock = s;
 }
 
 public void tampilDataBuku07(){
@@ -20,7 +20,6 @@ public void tampilDataBuku07(){
     System.out.println("Kode buku : " + kodeBuku);
     System.out.println("Judul buku : " + judulBuku);
     System.out.println("Tahun Terbit : " + tahunTerbit);
-    System.out.println("Peangarang : " +pengarang);
     System.out.println("Pengarang : " + pengarang);
     System.out.println("Stock : " + stock);
 }

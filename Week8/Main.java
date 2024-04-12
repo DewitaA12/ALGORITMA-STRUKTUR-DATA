@@ -3,18 +3,21 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        Gudang07 gudang = new Gudang07(7);
         Scanner scanner = new Scanner(System.in);
+        System.out.print("Custom Kapasitas Gudang : ");
+        int cap = scanner.nextInt();
+        Gudang07 gudang = new Gudang07(cap);
+        
         while (true) {
             System.out.println("\n Menu :");
             System.out.println("1. Tambah barang");
             System.out.println("2. Ambil barang");
             System.out.println("3. Tampilkan tumpukan barang");
-            System.out.println("4. Keluar");
+            System.out.println("4. Lihat barang teratas");
+            System.out.println("5. Keluar");
             System.out.print("Pilih operasi : ");
             int pilihan = scanner.nextInt();
             scanner.nextLine();
-            scanner.close(); 
 
             switch (pilihan) {
                 case 1:
@@ -35,6 +38,9 @@ public class Main {
                     gudang.tampilkanBarang();
                     break;
                 case 4 :
+                    gudang.lihatBarangTeratas();
+                    break;
+                case 5 :
                     System.out.println("Keluar dari sistem...");
                     System.exit(0);
                     break;
@@ -42,7 +48,6 @@ public class Main {
                 System.out.println("Pilihan tidak valid. Silakan coba lagi.");
             }
         } 
-        
     }
 }
 

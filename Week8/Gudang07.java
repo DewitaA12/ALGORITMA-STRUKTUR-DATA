@@ -1,10 +1,12 @@
 package Week8;
 
+import java.util.Scanner;
+
 public class Gudang07 {
     Barang07[] tumpukan;
     int size;
     int top;
-
+   
     public Gudang07(int kapasitas){
         size = kapasitas;
         tumpukan = new Barang07[size];
@@ -61,6 +63,22 @@ public class Gudang07 {
         }
     }
 
+    public Barang07 lihatBarangTerbawah() {
+        if (!cekKosong()){
+            for (int i = top; i >= 0; i--) {
+                if (i == 0) {
+                    System.out.println("Barang terbawah: " + tumpukan[i].nama);
+                    return tumpukan[i];
+                }
+            }
+        } else {
+            System.out.println("Tumpukan barang kosong.");
+            return null;
+        }
+        return null;
+    }
+
+
     public void tampilkanBarang() {
         if (!cekKosong()) {
             System.out.println("Rincian tumpukan barang di Gudang: ");
@@ -86,5 +104,34 @@ public class Gudang07 {
             biner += stack.pop();
         }
         return biner;
+    }
+
+    public Barang07 cariBarang(Scanner scanner, int kodeBarang, String namaBarang) {
+
+        if (!cekKosong()) {
+            // Linear search 
+            for (int i = top; i >= 0; i--) {
+                Barang07 barang = tumpukan[i];
+    
+                // Check by code
+                if (barang.kode == kodeBarang) {
+                    System.out.println("Barang ditemukan berdasarkan kode: " + barang.nama);
+                    return barang;
+                }
+    
+                // Check by name (case-insensitive)
+                if (barang.nama.equalsIgnoreCase(namaBarang)) {
+                    System.out.println("Barang ditemukan berdasarkan nama: " + barang.kode);
+                    return barang;
+                }
+            }
+    
+            // Item not found
+            System.out.println("Barang tidak ditemukan dengan kode " + kodeBarang + " atau nama " + namaBarang);
+            return null;
+        } else {
+            System.out.println("Tumpukan barang kosong.");
+            return null;
+        }
     }
 }

@@ -19,8 +19,13 @@ public class Rekening07 {
 
     }
 
-    public void tampilAll() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'tampilAll'");
+    public void tampilAll(){
+        System.out.println();
+        System.out.println("No. Rekening \t= " + noRek);
+        System.out.println("Nama \t\t= " + nama);
+        System.out.println("Telefon \t= " + telefon);
+        System.out.println("Email \t\t= " + email);
+        System.out.println("Saldo \t\t= " + saldo);
     }
+    
 }

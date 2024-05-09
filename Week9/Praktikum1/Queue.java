@@ -65,7 +65,8 @@ public class Queue {
      public void Enqueque(int dt) {
         if (IsFull()) {
             System.out.println("Queue sudah penuh (Queue Overflow)");
-            System.exit(1); // Queue overflow exit program
+            //System.exit(1); // Queue overflow exit program
+            throw new IllegalStateException("Queue Overflow"); // Throw exception instead of exit
         } else {
             if (IsEmpty()) {
                 front = rear = 0;
@@ -85,7 +86,8 @@ public class Queue {
         int dt = 0;
         if (IsEmpty()) {
             System.out.println("Queue masih kosong (Queue Underflow)");
-            System.exit(1);
+            //System.exit(1);
+            throw new IllegalStateException("Queue Underflow"); // Throw exception instead of exit
         } else {
             dt = data[front] ;
             size--;

@@ -18,6 +18,12 @@ public class QueueMain {
         System.out.print("Masukkan kapasitas queue : ");
         int n = sc.nextInt();
         Queue Q = new Queue(n);
+        try {
+            // Operasi Queue menggunakan queue
+          } catch (IllegalStateException e) {
+            System.out.println("Error: " + e.getMessage());
+            System.exit(1); // Keluar dari program dengan kode error 1
+          }
         int pilih;
         
     

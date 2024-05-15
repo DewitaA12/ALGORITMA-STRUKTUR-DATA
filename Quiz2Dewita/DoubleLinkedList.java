@@ -67,5 +67,9 @@ public class DoubleLinkedList {
         }
         System.out.println("");
     }
+    public void merge() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'merge'");
+    }
 
 }

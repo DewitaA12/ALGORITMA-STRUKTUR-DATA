@@ -21,6 +21,23 @@ public class Main {
         dll.print();
         System.out.println("-------print from tail");
         dll.printFromTail();
+        System.out.println("Merge dll1 dan dll2");
+        dll.merge();
+
+        DoubleLinkedList dll1 = new DoubleLinkedList();
+        dll1.addFirst(9);
+        dll1.addFirst(8);
+        dll1.addFirst(7);
+        dll1.addFirst(6);
+        
+
+        DoubleLinkedList dll2 = new DoubleLinkedList();
+        dll2.addFirst(5);
+        dll2.addFirst(4);
+        dll2.addFirst(3);
+        dll2.addFirst(2);
+        
+
 
         // dll.print();
         // dll.printFromTail();
@@ -28,8 +45,11 @@ public class Main {
         //lanjutkan dengan memanggil method merge, split
     }
     //No. 3 Kode Ganjil
-    public static void merge(DoubleLinkedList dll1,
+    public void merge(DoubleLinkedList dll1,
             DoubleLinkedList dll2){
+        System.out.print("Berikut merge data dll1 dan dll2 : " );
+        dll1.print();
+        dll2.print();
         //complete this method
     }
     //No. 3 Kode Genap

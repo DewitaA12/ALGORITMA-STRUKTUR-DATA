@@ -3,6 +3,8 @@ package Week11;
 public class SLLMain {
     public static void main(String[] args) {
         SingleLinkedList singLL = new SingleLinkedList();
+
+        //Add data
         singLL.print();
         singLL.addFirst(890);
         singLL.print();
@@ -18,6 +20,7 @@ public class SLLMain {
         System.out.println("Data pada indeks ke-1 = " + singLL.getData(1));
         System.out.println("Data 3 berada pada indeks ke- " + singLL.indexOf(760));
 
+        //Remove data
         singLL.remove(999);
         singLL.print();
         singLL.removeAt(0);
@@ -26,5 +29,5 @@ public class SLLMain {
         singLL.print();
         singLL.removeLast();
         singLL.print();
-    }
+     }
 }

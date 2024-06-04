@@ -5,8 +5,8 @@ public class Node {
     Node next;
 
     Node(int nilai, Node berikutnya) {
-        data = nilai;
-        next = berikutnya;
+        this.data = nilai;
+        this.next = berikutnya;
     }
     
 }

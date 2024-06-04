@@ -15,7 +15,8 @@ public class SingleLinkedList {
     }
     }
 
-    void print(){ // pencetakan data ini tidak memperbolehkan LL dalam kondisi kosong
+    void print(){ // pencetakan data ini tidak memperbolehkan 
+                 //LL dalam kondisi kosong
 
         if(!isEmpty()){
             Node tmp = head;
@@ -84,7 +85,8 @@ public class SingleLinkedList {
         // satu indeks setelahnya
        // Node ndInput = new Node(input, null); tidak perlu
         if(index < 0){
-            System.out.println("Perbaiki logikanya!" + "Kalau indeksnya -1 bagaimana?");
+            System.out.println("Perbaiki logikanya!" + 
+            "Kalau indeksnya -1 bagaimana?");
         } else if(index == 0) {
             addFirst(input);
         } else {

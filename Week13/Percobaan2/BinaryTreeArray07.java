@@ -14,7 +14,7 @@ public class BinaryTreeArray07 {
     void traverseInOrder(int idxStart){
         if(idxStart<=idxLast){
             traverseInOrder(2*idxStart+1);
-            System.out.println(data[idxStart]+" ");
+            System.out.print(data[idxStart]+" ");
             traverseInOrder(2*idxStart+2);
         }
     }

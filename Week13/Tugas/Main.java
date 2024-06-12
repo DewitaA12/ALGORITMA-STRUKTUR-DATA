@@ -20,6 +20,15 @@ public class Main {
             tree.displayLeafNodes();
             System.out.println();
     
-            System.out.println("Jumlah leaf dalam tree \t: " + tree.countLeafNodes());}}
+            System.out.println("Jumlah leaf dalam tree \t: " + tree.countLeafNodes());
 
-    
+            System.out.print("PreOrder traversal     \t: ");
+            tree.traversePreOrder();
+            System.out.println();
+
+            System.out.print("PostOrder traversal    \t: ");
+            tree.traversePostOrder();
+            System.out.println();
+
+        }
+    }

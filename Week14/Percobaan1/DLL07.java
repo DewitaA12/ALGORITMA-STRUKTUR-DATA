@@ -1,18 +1,26 @@
 package Week14.Percobaan1;
 
-public class DLL07 {
-    Node07 head;
-    int size;
 
+public class DLL07 {
+    Node07 head;    // kepala dari DLL
+    int size;       // jumlah elemen dalam DLL
+
+    // konstruktor untuk membuat objek DLL baru yang kosong 
+    // inisialisasi head menjadi null, dan size menjadi 0
     DLL07(){
         head=null;
         size=0;
     }
 
+    // method untuk memeriksa paakah DLL kosong atau tidak
+    // akan mengembalikan nilai true apabila kosong dan
+    // false apabila sudah terisi
     boolean isEmpty(){
         return head == null;
     }
 
+    // method untuk menambahkan elemen baru diawal DLL
+    // dengan 2 parameter yang akan disimpan dalam simpul baru
     public void addFirst(int item, int jarak){
         if (isEmpty()) {
             head = new Node07(null, item, jarak, null);
@@ -24,99 +32,21 @@ public class DLL07 {
         size++;
     }
 
-    // public void addLast(int item) {
-    //     if (isEmpty()) {
-    //         addFirst(item);
-    //     } else {
-    //         Node current = head;
-    //         while (current.next != null) {
-    //             current = current.next;
-    //         }
-    //         Node newNode = new Node(current, item, null);
-    //         current.next = newNode;
-    //         size++;
-    //     }
-    // }
 
-    // public void add(int item, int index) throws Exception {
-    //     if (isEmpty()) {
-    //         addFirst(item);
-    //     } else if (index < 0 || index > size) {
-    //         throw new Exception("Nilai indeks di luar batas");
-    //     } else {
-    //         Node current = head;
-    //         int i = 0;
-    //         while (i < index) {
-    //             current = current.next;
-    //             i++;
-    //         }
-    //         if (current.prev == null) {
-    //             Node newNode = new Node(null, item, current);
-    //             current.prev = newNode;
-    //             head = newNode;
-    //         } else {
-    //             Node newNode = new Node (current.prev, item, current);
-    //             // newNode.prev = current.prev;
-    //             // newNode.next = current;
-    //             current.prev.next = newNode;
-    //             current.prev = newNode;
-    //         }
-    //     }
-    //     size++;
-    // }
-
+    // method untuk mendapatkan jumlah elemn dalam DLL
     public int size(){
         return size;
     }
 
+    // method untuk menghapus semua elemen dalam DLL
+    // mengosongkan head dan mengatur size menjadi 0
     public void clear(){
         head = null;
         size = 0;
     }
 
-    // public void print() {
-    //     if (!isEmpty()) {
-    //         Node tmp = head;
-    //         while (tmp != null) {
-    //             System.out.print(tmp.data + "\t");
-    //             tmp = tmp.next;
-    //         }
-    //         System.out.println("\nberhasil diisi");
-    //     } else {
-    //         System.out.println("Linked Lists Kosong");
-    //     }
-    // }
-
-    // public void removeFirst() throws Exception {
-    //     if (isEmpty()) {
-    //         throw new Exception ("Linked List masih kosong, tidak dapat dihapus !");
-    //     } else if (size == 1) {
-    //         removeLast();
-    //     } else {
-    //         head = head.next;
-    //         head.prev = null;
-    //         size--;
-    //     }
-    // }
-
-    // public void removeLast() throws Exception {
-    //     if (isEmpty()) {
-    //         throw new Exception ("Linked List masih kosong, tidak dapat dihapus !");
-    //     } else if (head.next == null) {
-    //         head = null;
-    //         size--;
-    //         return;
-    //     } 
-    //     Node current = head;
-    //     while (current.next.next != null) {
-    //         current = current.next;
-    //     }
-    //     current.next = null;
-    //     size--;
-        
-    // }    
-
-
+    // method untuk menghapus simpul denngan data tertentu dari DLL
+    // dengan parameter index yang akan dihapus
     public void remove(int index) {
         Node07 current = head;
         while (current != null) {
@@ -135,24 +65,9 @@ public class DLL07 {
         }
     }
 
-    // public int getFirst() throws Exception {
-    //     if (isEmpty()) {
-    //         throw new Exception ("Linked List Kosong");
-    //     }
-    //     return head.data;
-    // }
 
-    // public int getLast() throws Exception {
-    //     if (isEmpty()) {
-    //         throw new Exception ("Linked List Kosong");
-    //     }
-    //     Node tmp = head;
-    //     while (tmp.next != null) {
-    //         tmp = tmp.next;
-    //     }
-    //     return tmp.data;
-    // }
 
+    // method untuk mendapatkan informasi jarak dari simpul dengan indeks tertentu dalam DLL
     public int getJarak(int index)throws Exception {
         if (isEmpty() || index >= size) {
             throw new Exception ("Nilai indeks di luar batas.");
@@ -162,6 +77,17 @@ public class DLL07 {
             tmp = tmp.next;
         }
         return tmp.jarak;
+}
+
+public int[] getAllData() {
+    int[] dataArray = new int[size];
+    Node07 current = head;
+    int index = 0;
+    while (current != null) {
+        dataArray[index++] = current.data;
+        current = current.next;
+    }
+    return dataArray;
 }
 
 }

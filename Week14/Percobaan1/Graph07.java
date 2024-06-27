@@ -137,5 +137,25 @@ private boolean hasPathDFS(int current, int tujuan, boolean[] visited) {
     }
     return false;
 }
+
+public void updateJarak(int asal, int tujuan, int jarakBaru) throws Exception {
+    Node07 current = list[asal].head;
+    while (current != null) {
+        if (current.data == tujuan) {
+            current.jarak = jarakBaru;
+            break;
+        }
+        current = current.next;
+    }
+}
+
+public int hitungEdge() {
+    int totalEdge = 0;
+    for (int i = 0; i < vertex; i++) {
+        totalEdge += list[i].size();
+    }
+    return totalEdge;
+}
+
 }
 
